@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-app
+  labels:
+    app: cloud-app
+spec:
+  selector:
+    matchLabels:
+      app: cloud-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cloud-app
+    spec:
+      containers:
+      - name: cloud-app
+        image: <YOUR-IMAGE>
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+        # https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables
+        env:
+          - name: CLOUD_CLIENTID
+            valueFrom:
+              secretKeyRef:
+                name: cloud-app-secret
+                key: clientId
+          - name: CLOUD_CLIENTSECRET
+            valueFrom:
+              secretKeyRef:
+                name: cloud-app-secret
+                key: clientSecret
+          - name: CLOUD_AUTHSERVER
+            valueFrom:
+              secretKeyRef:
+                name: cloud-app-secret
+                key: authServer
+          - name: CLOUD_CONTACTPOINT
+            valueFrom:
+              secretKeyRef:
+                name: cloud-app-secret
+                key: contactPoint
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-app-svc
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: cloud-app
+  type: NodePort
