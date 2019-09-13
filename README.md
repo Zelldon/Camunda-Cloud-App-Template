@@ -2,6 +2,9 @@
 
 This repository contains an template to create a Spring Boot Application which can be deployed on kubernetes and uses Camunda Cloud to execute BPMN Workflows.
 
+
+If you want to see an real world example, just check out our BPMN Games Slack Bot https://github.com/saig0/bpmn-games
+
 ## Prerequisites
 
  * You need a Cloud Provider like AWS, GCloud or something similar to deploy your Spring Boot Application.
