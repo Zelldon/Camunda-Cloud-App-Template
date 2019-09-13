@@ -1,13 +1,17 @@
 .PHONE: all
 all: build push deploy
 
+projectNamespace=<NAMESPACE>
+projectName=<APP>
+projectVersion=latest
+
 .PHONY: build
 build: 
-	docker build . -t gcr.io/<YOUR_NAMESPACE>/<YOUR_PROJECT>:<VERSION>
+	docker build . -t gcr.io/$(projectNamespace)/$(projectName):$(projectVersion)
 
 .PHONY: push
 push: 
-	docker push gcr.io/<YOUR_NAMESPACE>/<YOUR_PROJECT>:<VERSION>
+	docker push gcr.io/$(projectNamespace)/$(projectName):$(projectVersion)
 
 .PHONY: deploy
 deploy:
