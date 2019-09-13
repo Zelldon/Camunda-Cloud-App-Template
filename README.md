@@ -1,9 +1,10 @@
-# Zeebe-Cloud-App-Template
+# Camunda-Cloud-App-Template
 
 This repository contains an template to create a Spring Boot Application which can be deployed on kubernetes and uses Camunda Cloud to execute BPMN Workflows.
 
 
 If you want to see an real world example, just check out our BPMN Games Slack Bot https://github.com/saig0/bpmn-games
+we presented on Camunda Con 2019.p
 
 ## Prerequisites
 
