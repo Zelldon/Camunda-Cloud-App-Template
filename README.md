@@ -30,6 +30,9 @@ projectName=<APP>
 projectVersion=latest
 ```
 
+Make sure that you reference the same docker image in the `k8s/cloud-app.yml` file.
+Search for `<IMAGE>` and replace it with your image tag.
+
 ### Cloud Credentials
 
 *Note:* You need access to https://console.cloud.camunda.io
