@@ -23,7 +23,7 @@ spec:
         # https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables
         env:
           - name: SPRING_PROFILES_ACTIVE
-              value: "cloud"
+            value: "cloud"
           - name: CLOUD_CLIENTID
             valueFrom:
               secretKeyRef:
