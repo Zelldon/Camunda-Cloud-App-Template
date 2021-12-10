@@ -17,7 +17,7 @@
   <properties>
     <version.zeebe>0.21.0-alpha3</version.zeebe>
     <version.spring>2.1.8.RELEASE</version.spring>
-    <version.log4j>2.11.1</version.log4j>
+    <version.log4j>2.15.0</version.log4j>
 
     <!-- release parent settings -->
     <version.java>11</version.java>
